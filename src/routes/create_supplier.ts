@@ -7,7 +7,7 @@ router.post('/api/supplier',async (req, res)=>{
         name,
         phone,
         address
-    } = req.body;
+    } = req.body
 
     const supplier = Supplier.create({
         name,
@@ -20,7 +20,7 @@ router.post('/api/supplier',async (req, res)=>{
     return res.json(supplier)
 });
 
-
+//add comment
 router.put('/api/supplier/update', async (req, res)=>{
     const {
         supplierId,
@@ -30,7 +30,6 @@ router.put('/api/supplier/update', async (req, res)=>{
     } = req.query;
 const id = Number(supplierId);
     const existing_supplier = await Supplier.findOne({
-
        where:{id : id } 
     })
 
